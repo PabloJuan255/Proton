@@ -4,7 +4,8 @@ var menssage = document.querySelector("input");
 
 socket.on("update", function(msg) {
     if (ready) {
-        $('.chat').append('<li class="info">' + msg + '</li>')
+        textarea.append('<li class="info">' + msg + '</li>');
+        menssage = null;
     }
 });
 
