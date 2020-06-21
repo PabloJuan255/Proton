@@ -19,3 +19,9 @@ input{
  width: 90%; 
  margin-right: .5%;
 }
+form { 
+ padding: 3px; 
+ position: fixed;
+ bottom: 0;
+ width: 100%; 
+}
