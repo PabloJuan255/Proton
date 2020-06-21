@@ -10,12 +10,8 @@ socket.on("update", function(msg) {
     }
 });
 
-document.addEventListener("keydown",function(x){
-  key = x.key;
-  console.log(key)
-  if(key == '\n'|| key == 'enter'){
-    var msg = menssage.textContent;
-    socket.emit("send",socket.id +": "+ text);
-    console.log(msg)
-  }
+input.onchange(){
+  var msg = menssage.textContent;
+  socket.emit("send",socket.id +": "+ text);
+  console.log(msg)
 }
