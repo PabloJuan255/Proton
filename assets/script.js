@@ -1,8 +1,8 @@
-var socket = io.connect("https://Proton-Chat.pablojuan.repl.run")
+var socket = io()
 var textarea = document.querySelector("textarea");
 var menssage = document.querySelector("input");
 
-socket.on("update", function(msg) {
+socket.on("send", function(msg) {
     if (ready) {
         msg = menssage.textContent;
         textarea.textContent = textarea.textContent + msg;
