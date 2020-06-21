@@ -1,30 +1,5 @@
-<!doctype html>
 <html>
-  <head>
-    <title>Proton</title>
-    <link href="https://pablojuan255.github.io/Proton/v2/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div>
-    <ul id="chat"></ul>
-    </div>
-    <form>
-      <input id="msg" autocomplete="off"></input>
-    </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      $(function(){
-        var socket = io();
-         $('form').submit(function(){
-           socket.emit('mensagem', $('#msg').val());
-           $('#msg').val('');
-          return false;
-        });
-        socket.on('mensagem', function(x){
-          $('#chat').append($('<li>').text(x));
-        });
-      });
-    </script>
-  </body>
+ <body>
+  <iframe style="width: 100%; height: 100%;" src="https://Proton-Chat-v2--pablojuan.repl.co"></iframe>
+ </body>
 </html>
