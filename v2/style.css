@@ -15,4 +15,7 @@ input{
  color: white;
  background-color: #000011;
  border: 1px solid whitesmoke;
+ padding: 10px; 
+ width: 90%; 
+ margin-right: .5%;
 }
