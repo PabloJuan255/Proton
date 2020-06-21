@@ -10,7 +10,7 @@ socket.on("send", function(msg) {
     }
 });
 
-input.onchange(){
+function send(){  
   var msg = menssage.textContent;
   socket.emit("send",socket.id +": "+ text);
   console.log(msg)
