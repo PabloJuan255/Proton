@@ -3,8 +3,10 @@ body{
  background-color: #000011;
 }
 ul{
-  background-color: #000011;
   border: 1px sold black;
+  color: white;
+}
+li{
   color: white;
 }
 input{
