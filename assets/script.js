@@ -4,15 +4,18 @@ var menssage = document.querySelector("input");
 
 socket.on("update", function(msg) {
     if (ready) {
-        textarea.append('<li class="info">' + msg + '</li>');
-        menssage = null;
+        msg = menssage.textContent;
+        textarea.textContent = textarea.textContent + msg;
+        delete msg;
     }
 });
 
-textarea.addEventListener("keypress",function(x){
-  key = x.key
-  if(key == 'Enter'|| key == 'enter'){
-    var text = menssage.textContent;
-    socket.emit("send",socket.id +" "+ text)
+document.addEventListener("keydown",function(x){
+  key = x.key;
+  console.log(key)
+  if(key == '\n'|| key == 'enter'){
+    var msg = menssage.textContent;
+    socket.emit("send",socket.id +": "+ text);
+    console.log(msg)
   }
 }
