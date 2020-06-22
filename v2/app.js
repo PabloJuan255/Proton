@@ -9,14 +9,16 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  io.emit('mensagem','Um usuário entrou na sala:' + socket.id);
+  var frases = ['O ' + socket.id + ' entrou na sala com Pizza! ','O ' + socket.id + ' entrou na sala com refrigerante!','O ' + socket.id + ' entrou na sala se sentido Poderoso!','O ' + socket.id + ' entrou na sala se sentido Alegre!','O ' + socket.id + ' entrou na sala se sentido um Hacker!']  
+  io.emit('mensagem',frases[Math.floor(Math.random() * 5)]);
   
   socket.on('mensagem', function(msg){
     io.emit('mensagem',socket.id +': '+ msg);
   });
-
+  
+  var frases_sair = ['Que pena,'+socket.id+',volte depois!','Permaneça aqui,'+socket.id+',nem faz muito tempo que está aqui!']
   socket.on('disconnect', function(){
-    io.emit('mensagem','Um usuário foi disconectado:' + socket.id);
+    io.emit('mensagem',frases_sair[Math.floor(Math.random() * 2)]);
   });
 });
 
